@@ -1,5 +1,8 @@
 # Geo Weather Project
 
-* Run Application class;
-* Open http://localhost:8080;
-* Enjoy.
+1. Run Application class;
+2. Open http://localhost:8080;
+3. Enjoy.
+
+ #### IDE Requirements ####
+ * Lombok plugin
