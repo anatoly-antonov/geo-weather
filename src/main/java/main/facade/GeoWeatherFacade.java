@@ -1,8 +1,9 @@
 package main.facade;
 
 import lombok.AllArgsConstructor;
+import main.entity.GeoLocationResponse;
+import main.service.GeoLocationService;
 import main.service.GeoWeatherService;
-import main.service.LocationService;
 import main.service.WeatherService;
 import org.springframework.stereotype.Component;
 
@@ -11,11 +12,11 @@ import org.springframework.stereotype.Component;
 public class GeoWeatherFacade {
 
     private final GeoWeatherService service;
-    private final LocationService locationService;
+    private final GeoLocationService geoLocationService;
     private final WeatherService weatherService;
 
     public String getWeather() {
-
-        return "IP: "+service.getIpAddress();
+        GeoLocationResponse geoResponse = geoLocationService.getLocation();
+        return geoResponse.toString();
     }
 }
