@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping(path = "api")
+@RequestMapping
 public class GeoWeatherController {
 
     private final GeoWeatherFacade facade;

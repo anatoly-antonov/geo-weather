@@ -15,6 +15,7 @@ public class GeoWeatherFacade {
     private final WeatherService weatherService;
 
     public String getWeather() {
-        return "Weather";
+
+        return "IP: "+service.getIpAddress();
     }
 }
