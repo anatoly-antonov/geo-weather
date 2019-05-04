@@ -12,6 +12,7 @@ public class ApplicationConfiguration {
     @Data
     public static class Urls {
         String geolocation;
+        String weather;
     }
 
     private Urls urls;
