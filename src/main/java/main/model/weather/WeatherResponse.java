@@ -8,6 +8,9 @@ import java.util.List;
 @Data
 public class WeatherResponse implements Serializable {
 
-
-    private List<Weather> weather;
+    private Long visibility;
+    private Coordinates coord;
+    private Wind wind;
+    private Conditions main;
+    private List<Cloudiness> weather;
 }

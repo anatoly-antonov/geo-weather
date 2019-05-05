@@ -3,7 +3,7 @@ package main.model.weather;
 import lombok.Data;
 
 @Data
-public class Weather {
+public class Wind {
 
-    private String description;
+    private Double speed;
 }

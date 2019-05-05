@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import main.facade.GeoWeatherFacade;
 import main.model.GeoWeatherResponse;
 import main.model.geolocation.GeoLocationResponse;
+import main.model.weather.WeatherDTO;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +29,12 @@ public class GeoWeatherController {
     @GetMapping(path = "geolocation", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<GeoLocationResponse>> getGeoLocations() {
         List<GeoLocationResponse> response = facade.getGeoLocations();
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping(path = "weatherData", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<WeatherDTO>> getWeatherData() {
+        List<WeatherDTO> response = facade.getWeatherData();
         return ResponseEntity.ok(response);
     }
 }

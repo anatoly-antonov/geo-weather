@@ -3,7 +3,7 @@ package main.model;
 import lombok.Builder;
 import lombok.Data;
 import main.model.geolocation.GeoLocationResponse;
-import main.model.weather.WeatherResponse;
+import main.model.weather.WeatherDTO;
 
 import java.time.LocalDateTime;
 
@@ -15,5 +15,5 @@ public class GeoWeatherResponse {
     private String status;
     private String error;
     private GeoLocationResponse geoData;
-    private WeatherResponse weatherData;
+    private WeatherDTO weatherData;
 }

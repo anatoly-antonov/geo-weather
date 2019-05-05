@@ -4,8 +4,9 @@ import lombok.AllArgsConstructor;
 import main.model.GeoWeatherResponse;
 import main.model.Status;
 import main.model.geolocation.GeoLocationResponse;
-import main.model.weather.WeatherResponse;
+import main.model.weather.WeatherDTO;
 import main.repository.GeoLocationRepository;
+import main.repository.WeatherRepository;
 import main.service.GeoLocationService;
 import main.service.WeatherService;
 import org.springframework.stereotype.Component;
@@ -21,24 +22,32 @@ public class GeoWeatherFacade {
     private final GeoLocationService geoLocationService;
     private final GeoLocationRepository geoLocationRepository;
     private final WeatherService weatherService;
+    private final WeatherRepository weatherRepository;
 
     public GeoWeatherResponse getWeather() {
         GeoLocationResponse geoResponse = geoLocationService.getLocation();
-        WeatherResponse weatherResponse = weatherService.getWeather(geoResponse.getLat(), geoResponse.getLon());
+        WeatherDTO weather = weatherService.getWeather(geoResponse.getLat(), geoResponse.getLon());
 
         geoLocationRepository.save(geoResponse);
+        weatherRepository.save(weather);
 
         return GeoWeatherResponse.builder()
                 .date(LocalDateTime.now())
                 .status(Status.SUCCESS.getName())
                 .geoData(geoResponse)
-                .weatherData(weatherResponse)
+                .weatherData(weather)
                 .build();
     }
 
     public List<GeoLocationResponse> getGeoLocations() {
         List<GeoLocationResponse> list = new ArrayList<>();
         geoLocationRepository.findAll().iterator().forEachRemaining(list::add);
+        return list;
+    }
+
+    public List<WeatherDTO> getWeatherData() {
+        List<WeatherDTO> list = new ArrayList<>();
+        weatherRepository.findAll().iterator().forEachRemaining(list::add);
         return list;
     }
 }
