@@ -1,4 +1,4 @@
-package main.entity.geolocation;
+package main.model.geolocation;
 
 import lombok.Data;
 

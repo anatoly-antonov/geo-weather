@@ -1,9 +1,9 @@
-package main.entity;
+package main.model;
 
 import lombok.Builder;
 import lombok.Data;
-import main.entity.geolocation.GeoLocationResponse;
-import main.entity.weather.WeatherResponse;
+import main.model.geolocation.GeoLocationResponse;
+import main.model.weather.WeatherResponse;
 
 import java.time.LocalDateTime;
 

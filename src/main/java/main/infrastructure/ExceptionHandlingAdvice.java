@@ -1,8 +1,8 @@
 package main.infrastructure;
 
-import main.entity.GeoWeatherResponse;
-import main.entity.Status;
 import main.infrastructure.exception.ApplicationException;
+import main.model.GeoWeatherResponse;
+import main.model.Status;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

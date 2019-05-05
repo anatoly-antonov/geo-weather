@@ -1,10 +1,10 @@
 package main.facade;
 
 import lombok.AllArgsConstructor;
-import main.entity.GeoWeatherResponse;
-import main.entity.Status;
-import main.entity.geolocation.GeoLocationResponse;
-import main.entity.weather.WeatherResponse;
+import main.model.GeoWeatherResponse;
+import main.model.Status;
+import main.model.geolocation.GeoLocationResponse;
+import main.model.weather.WeatherResponse;
 import main.service.GeoLocationService;
 import main.service.WeatherService;
 import org.springframework.stereotype.Component;

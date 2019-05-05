@@ -1,8 +1,8 @@
 package main.controller;
 
 import lombok.AllArgsConstructor;
-import main.entity.GeoWeatherResponse;
 import main.facade.GeoWeatherFacade;
+import main.model.GeoWeatherResponse;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
