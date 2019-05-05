@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import main.configuration.ApplicationConfiguration;
 import main.entity.weather.WeatherResponse;
 import main.infrastructure.exception.ApplicationException;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,6 +17,7 @@ public class WeatherService {
     private final RestTemplate restTemplate;
     private final ApplicationConfiguration configuration;
 
+    @Cacheable("weather")
     public WeatherResponse getWeather(Double lat, Double lon) {
         try {
             return restTemplate.getForObject(

@@ -2,6 +2,11 @@ server:
   context-path: /
 logging.level.org.springframework.web: INFO
 
+spring:
+  cache:
+    jcache:
+      config: classpath:ehcache.xml
+
 app:
   urls:
     geolocation: http://ip-api.com/json

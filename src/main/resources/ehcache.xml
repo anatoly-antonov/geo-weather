@@ -1,0 +1,24 @@
+<config
+        xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+        xmlns='http://www.ehcache.org/v3'
+        xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core.xsd">
+
+<cache alias="geolocation">
+    <expiry>
+        <ttl unit="minutes">10</ttl>
+    </expiry>
+    <resources>
+        <heap>100</heap>
+    </resources>
+</cache>
+
+<cache alias="weather">
+    <expiry>
+        <ttl unit="minutes">10</ttl>
+    </expiry>
+    <resources>
+        <heap>100</heap>
+    </resources>
+</cache>
+
+</config>

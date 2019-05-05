@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import main.configuration.ApplicationConfiguration;
 import main.entity.geolocation.GeoLocationResponse;
 import main.infrastructure.exception.ApplicationException;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,6 +17,7 @@ public class GeoLocationService {
     private final RestTemplate restTemplate;
     private final ApplicationConfiguration configuration;
 
+    @Cacheable("geolocation")
     public GeoLocationResponse getLocation() {
         try {
             return restTemplate.getForObject(configuration.getUrls().getGeolocation(), GeoLocationResponse.class);
