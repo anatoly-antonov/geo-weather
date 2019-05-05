@@ -20,7 +20,7 @@ public class SwaggerConfiguration {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("main.controller"))
-                .paths(PathSelectors.regex("/weather.*"))
+                .paths(PathSelectors.regex("(/weather.*|/geo.*)"))
                 .build()
                 .apiInfo(info());
     }
