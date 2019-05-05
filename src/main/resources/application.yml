@@ -5,4 +5,4 @@ logging.level.org.springframework.web: INFO
 app:
   urls:
     geolocation: http://ip-api.com/json
-    weather: https://samples.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=b51859ba8571005d0192e1f9bff694a6
+    weather: https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=b51859ba8571005d0192e1f9bff694a6

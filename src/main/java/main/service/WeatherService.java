@@ -15,7 +15,7 @@ public class WeatherService {
     private final RestTemplate restTemplate;
     private final ApplicationConfiguration configuration;
 
-    public WeatherResponse getWeather(Double lon, Double lat) {
+    public WeatherResponse getWeather(Double lat, Double lon) {
         return restTemplate.getForObject(
                 format(configuration.getUrls().getWeather(), lat, lon),
                 WeatherResponse.class);
