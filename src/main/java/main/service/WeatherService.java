@@ -21,7 +21,6 @@ public class WeatherService {
     private final RestTemplate restTemplate;
     private final ApplicationConfiguration configuration;
 
-
     private WeatherResponse getRawWeatherData(Double lat, Double lon) {
         try {
             return restTemplate.getForObject(

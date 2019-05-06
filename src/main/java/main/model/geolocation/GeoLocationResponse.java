@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
-@Entity(name = "geoLocation")
+@Entity(name = "geolocation")
 public class GeoLocationResponse implements Serializable {
 
     @Id

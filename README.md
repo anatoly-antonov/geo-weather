@@ -9,6 +9,12 @@ Source code: https://github.com/anatoly-antonov/geo-weather
  #### Usages ####
  * Ehcache for 3rd party services response cache;
  * H2 for in-memory database;
+ * JaCoCo for test coverage report.
+ 
+ #### Test Coverage Report ####
+ 1. Execute "mvn clean test" command;
+ 2. Execute "mvn jacoco:report";
+ 3. Open target\site\jacoco\index.html to see the report.
 
  #### H2 Console ####
  1. Open http://localhost:8080/h2/
