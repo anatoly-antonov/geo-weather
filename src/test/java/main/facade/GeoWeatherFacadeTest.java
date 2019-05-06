@@ -80,7 +80,7 @@ public class GeoWeatherFacadeTest {
         when(weatherRepository.findAll()).thenReturn(iterable);
         when(iterable.iterator()).thenReturn(Lists.newArrayList(weatherDTO).iterator());
 
-        List<WeatherDTO> result = facade.getWeatherData();
+        List<WeatherDTO> result = facade.getWeatherData(null, null);
         assertNotNull(result);
         assertEquals(1, result.size());
         assertEquals(weatherDTO, result.get(0));

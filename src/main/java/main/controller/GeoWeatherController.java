@@ -35,8 +35,10 @@ public class GeoWeatherController {
     }
 
     @GetMapping(path = "weatherData", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<WeatherDTO>> getWeatherData() {
-        List<WeatherDTO> response = facade.getWeatherData();
+    public ResponseEntity<List<WeatherDTO>> getWeatherData(
+            @RequestParam(required = false) Double latitude,
+            @RequestParam(required = false) Double longitude) {
+        List<WeatherDTO> response = facade.getWeatherData(latitude, longitude);
         return ResponseEntity.ok(response);
     }
 }

@@ -49,9 +49,13 @@ public class GeoWeatherFacade {
         return list;
     }
 
-    public List<WeatherDTO> getWeatherData() {
+    public List<WeatherDTO> getWeatherData(Double lat, Double lon) {
         List<WeatherDTO> list = new ArrayList<>();
-        weatherRepository.findAll().iterator().forEachRemaining(list::add);
+        if (lat != null && lon != null) {
+            weatherRepository.findByCoordinates(lat, lon).iterator().forEachRemaining(list::add);
+        } else {
+            weatherRepository.findAll().iterator().forEachRemaining(list::add);
+        }
         return list;
     }
 }
