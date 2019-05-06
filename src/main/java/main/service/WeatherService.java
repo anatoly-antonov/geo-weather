@@ -46,6 +46,7 @@ public class WeatherService {
                 .minimumTemperature(response.getMain().getTemp_min())
                 .pressure(response.getMain().getPressure())
                 .humidity(response.getMain().getHumidity())
+                .visibility(response.getVisibility())
                 .windSpeed(response.getWind() != null ? response.getWind().getSpeed() : null)
                 .cloudiness(response.getWeather().isEmpty() ? null : response.getWeather().stream()
                         .map(cloudiness -> cloudiness.getMain() +" - "+ cloudiness.getDescription())

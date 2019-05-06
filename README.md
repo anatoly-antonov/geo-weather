@@ -7,8 +7,8 @@ Source code: https://github.com/anatoly-antonov/geo-weather
 3. Enjoy.
 
  #### Usages ####
- * Ehcache for 3rd party services response cache;
- * H2 for in-memory database;
+ * Ehcache as a cache;
+ * H2 as in-memory database;
  * JaCoCo for test coverage report.
  
  #### Test Coverage Report ####

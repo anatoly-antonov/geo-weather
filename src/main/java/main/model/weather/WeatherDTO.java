@@ -31,6 +31,7 @@ public class WeatherDTO {
     private Long pressure;
     private Integer humidity;
     private Double windSpeed;
+    private Long visibility;
     @ElementCollection
     private List<String> cloudiness;
 }
