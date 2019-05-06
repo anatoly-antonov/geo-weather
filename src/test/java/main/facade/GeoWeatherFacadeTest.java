@@ -65,7 +65,7 @@ public class GeoWeatherFacadeTest {
         when(geoLocationRepository.findAll()).thenReturn(iterable);
         when(iterable.iterator()).thenReturn(Lists.newArrayList(mockLocation1, mockLocation2).iterator());
 
-        List<GeoLocationResponse> result = facade.getGeoLocations();
+        List<GeoLocationResponse> result = facade.getGeoLocations(null);
         assertNotNull(result);
         assertEquals(2, result.size());
         assertEquals(mockLocation1, result.get(0));

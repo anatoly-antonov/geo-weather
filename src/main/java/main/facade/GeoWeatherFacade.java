@@ -39,9 +39,13 @@ public class GeoWeatherFacade {
                 .build();
     }
 
-    public List<GeoLocationResponse> getGeoLocations() {
+    public List<GeoLocationResponse> getGeoLocations(String ipAddress) {
         List<GeoLocationResponse> list = new ArrayList<>();
-        geoLocationRepository.findAll().iterator().forEachRemaining(list::add);
+        if (ipAddress != null) {
+            geoLocationRepository.findByQuery(ipAddress).iterator().forEachRemaining(list::add);
+        } else {
+            geoLocationRepository.findAll().iterator().forEachRemaining(list::add);
+        }
         return list;
     }
 
